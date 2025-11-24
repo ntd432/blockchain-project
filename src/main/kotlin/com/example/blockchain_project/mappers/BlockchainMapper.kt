@@ -7,14 +7,16 @@ object BlockchainMapper {
     fun toEntity(domain: Blockchain): BlockchainEntity {
         return BlockchainEntity(
                 id = domain.id,
-                difficulty = domain.difficulty
+                difficulty = domain.difficulty,
+                consensusAlgorithm = domain.consensusAlgorithm
         )
     }
 
     fun toDomain(entity: BlockchainEntity): Blockchain {
         return Blockchain(
                 id = entity.id,
-                difficulty = entity.difficulty
+                difficulty = entity.difficulty,
+                consensusAlgorithm = entity.consensusAlgorithm
         )
     }
 }

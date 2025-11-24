@@ -18,7 +18,7 @@ object BlockMapper {
     }
 
     fun toDomain(entity: BlockEntity): Block {
-        return Block(
+        val block = Block(
                 id = entity.id,
                 previousHash = entity.previousHash,
                 chainId = entity.chainId,
@@ -27,6 +27,8 @@ object BlockMapper {
                 data = entity.data,
                 timeStamp = entity.timeStamp
         )
+        block.hash = entity.hash
+        return block
     }
 
     // List<Entity> → List<Domain>

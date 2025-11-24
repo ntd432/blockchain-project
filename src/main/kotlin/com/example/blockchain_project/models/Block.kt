@@ -1,6 +1,7 @@
 package com.example.blockchain_project.models
 
 import com.example.blockchain_project.utils.Crypt
+import com.google.gson.Gson
 
 data class Block (val id: String? = null,
                   val previousHash: String? = null,
@@ -20,6 +21,6 @@ data class Block (val id: String? = null,
         return Crypt.Sha256.generateHash(
                 chainId + index.toString() + previousHash
                         + timeStamp.toString()
-                        + data + nonce)
+                        + Gson().toJson(data) + nonce)
     }
 }

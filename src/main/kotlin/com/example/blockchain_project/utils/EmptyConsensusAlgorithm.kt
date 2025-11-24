@@ -5,17 +5,12 @@ import com.example.blockchain_project.models.Block
 import org.springframework.stereotype.Component
 
 @Component
-object ProofOfWork : ConsensusAlgorithm {
+object EmptyConsensusAlgorithm : ConsensusAlgorithm {
     override fun getAlgorithm(): ConsensusAlgorithmEnum {
-        return ConsensusAlgorithmEnum.PROOF_OF_WORK
+        return ConsensusAlgorithmEnum.NONE
     }
 
     override fun reachConsensus(block: Block, difficulty: Long): Block {
-        val target = "0".repeat(difficulty.toInt())
-        while (block.hash?.startsWith(target) == false) {
-            block.nonce = block.nonce + 1
-            block.hash = block.calculateHash()
-        }
         return block
     }
 }

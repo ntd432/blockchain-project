@@ -3,6 +3,7 @@ package com.example.blockchain_project.controllers
 import com.example.blockchain_project.models.Block
 import com.example.blockchain_project.models.Blockchain
 import com.example.blockchain_project.models.Data
+import com.example.blockchain_project.requests.CreateBlockchainRequest
 import com.example.blockchain_project.services.BlockchainService
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
@@ -20,8 +21,8 @@ class BlockchainController(private val blockchainService: BlockchainService) {
     }
 
     @PostMapping()
-    fun createBlockChain(): Blockchain {
-        return blockchainService.createBlockchain()
+    fun createBlockChain(@RequestBody createBlockchainRequest: CreateBlockchainRequest): Blockchain {
+        return blockchainService.createBlockchain(createBlockchainRequest)
     }
 
     @PostMapping("/{id}")
