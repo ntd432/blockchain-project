@@ -20,7 +20,6 @@ object BlockMapper {
     fun toDomain(entity: BlockEntity): Block {
         return Block(
                 id = entity.id,
-                hash = entity.hash,
                 previousHash = entity.previousHash,
                 chainId = entity.chainId,
                 nonce = entity.nonce,

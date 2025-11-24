@@ -1,5 +1,6 @@
 package com.example.blockchain_project.entities
 
+import com.example.blockchain_project.models.Data
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import org.springframework.data.mongodb.core.mapping.Field
@@ -12,8 +13,8 @@ data class BlockEntity (
         val previousHash: String? = null,
         @Field("chain_id")
         val chainId: String? = null,
-        val nonce: String? = null,
+        val nonce: Long = 0,
         val index: Long = 0,
-        val data: DataEntity? = null,
+        val data: Data? = null,
         val timeStamp: Long = 0,
 )
