@@ -7,5 +7,5 @@ class SupplyChainData (
         val status: SupplyChainStatusEnum = SupplyChainStatusEnum.MANUFACTURED,
         val location: String? = null,
         createdBy: String? = null,
-        dataOrder: Long? = 0
+        dataOrder: Long = 0
 ) : Data(createdBy, dataOrder)

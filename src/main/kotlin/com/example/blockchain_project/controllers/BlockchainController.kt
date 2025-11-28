@@ -14,19 +14,19 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/blockchain")
-class BlockchainController(private val blockchainService: BlockchainService) {
+class BlockchainController(private val blockchainService: BlockchainService<Data>) {
     @GetMapping("/{id}")
-    fun getBlockchain(@PathVariable id: String): Blockchain? {
+    fun getBlockchain(@PathVariable id: String): Blockchain<Data>? {
         return blockchainService.getBlockchainById(id)
     }
 
     @PostMapping()
-    fun createBlockChain(@RequestBody createBlockchainRequest: CreateBlockchainRequest): Blockchain {
+    fun createBlockChain(@RequestBody createBlockchainRequest: CreateBlockchainRequest): Blockchain<Data> {
         return blockchainService.createBlockchain(createBlockchainRequest)
     }
 
     @PostMapping("/{id}")
-    fun addBlockToChain(@PathVariable id: String, @RequestBody data: Data): Block? {
+    fun addBlockToChain(@PathVariable id: String, @RequestBody data: Data): Block<Data>? {
         return blockchainService.addBlockToChain(id, data)
     }
 

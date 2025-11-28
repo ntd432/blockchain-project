@@ -3,12 +3,12 @@ package com.example.blockchain_project.models
 import com.example.blockchain_project.utils.Crypt
 import com.google.gson.Gson
 
-data class Block (val id: String? = null,
+data class Block<T: Data> (val id: String? = null,
                   val previousHash: String? = null,
                   var chainId: String? = null,
                   var nonce: Long = 0,
                   val index: Long = 0,
-                  val data: Data? = null,
+                  val data: T? = null,
                   val timeStamp: Long = 0){
     var hash: String? = calculateHash()
 

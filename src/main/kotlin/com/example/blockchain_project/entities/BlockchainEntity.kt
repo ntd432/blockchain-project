@@ -1,6 +1,7 @@
 package com.example.blockchain_project.entities
 
 import com.example.blockchain_project.enums.ConsensusAlgorithmEnum
+import com.example.blockchain_project.models.Data
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 
@@ -8,5 +9,6 @@ import org.springframework.data.mongodb.core.mapping.Document
 data class BlockchainEntity (
     @Id val  id: String? = null,
         val difficulty: Long = 0,
-        val consensusAlgorithm: ConsensusAlgorithmEnum = ConsensusAlgorithmEnum.PROOF_OF_WORK
+        val consensusAlgorithm: ConsensusAlgorithmEnum = ConsensusAlgorithmEnum.PROOF_OF_WORK,
+    val type: String? = Data::class.simpleName
 )

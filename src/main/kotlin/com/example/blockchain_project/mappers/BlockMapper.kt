@@ -2,9 +2,10 @@ package com.example.blockchain_project.mappers
 
 import com.example.blockchain_project.entities.BlockEntity
 import com.example.blockchain_project.models.Block
+import com.example.blockchain_project.models.Data
 
-object BlockMapper {
-    fun toEntity(domain: Block): BlockEntity {
+class BlockMapper<T: Data> {
+    fun toEntity(domain: Block<T>): BlockEntity<T> {
         return BlockEntity(
                 id = domain.id,
                 hash = domain.hash,
@@ -17,8 +18,8 @@ object BlockMapper {
         )
     }
 
-    fun toDomain(entity: BlockEntity): Block {
-        val block = Block(
+    fun toDomain(entity: BlockEntity<T>): Block<T> {
+        val block = Block<T>(
                 id = entity.id,
                 previousHash = entity.previousHash,
                 chainId = entity.chainId,
@@ -32,10 +33,10 @@ object BlockMapper {
     }
 
     // List<Entity> → List<Domain>
-    fun toDomainList(entities: List<BlockEntity>): List<Block> =
+    fun toDomainList(entities: List<BlockEntity<T>>): List<Block<T>> =
             entities.map { toDomain(it) }
 
     // List<Domain> → List<Entity>
-    fun toEntityList(blocks: List<Block>): List<BlockEntity> =
+    fun toEntityList(blocks: List<Block<T>>): List<BlockEntity<T>> =
             blocks.map { toEntity(it) }
 }
