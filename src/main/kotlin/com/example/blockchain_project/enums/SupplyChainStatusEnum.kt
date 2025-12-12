@@ -4,8 +4,11 @@ import com.fasterxml.jackson.annotation.JsonCreator
 
 enum class SupplyChainStatusEnum(val status: String) {
     MANUFACTURED("Manufactured"),
-    SHIPPED("Shipped"),
-    DELIVERED("Delivered");
+    PACKED("Packed"),
+    COLLECTED_BY_DISTRIBUTOR("Collected by Distributor"),
+    IN_TRANSIT_TO_RETAILER("In Transit to Retailer"),
+    DELIVERED("Delivered"),
+    PURCHASED("Purchased");
 
     companion object {
         @JvmStatic
