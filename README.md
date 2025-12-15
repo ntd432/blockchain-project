@@ -48,4 +48,4 @@ Once finish testing with
 ```console
 docker-compose down
 ```
-The API can be found by accessing `localhost:8080`.
+The API can be found by accessing `localhost:8080`, Swagger Documentation at [http://localhost:8080/swagger-ui/index.html#/](`http://localhost:8080/swagger-ui/index.html#/`).

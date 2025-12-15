@@ -4,8 +4,8 @@ import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonValue
 
 enum class ConsensusAlgorithmEnum(@JsonValue val algorithm: String) {
-    NONE("None"),
-    PROOF_OF_WORK("Proof of work");
+    PROOF_OF_WORK("Proof of work"),
+    NONE("None");
 
     companion object {
         @JvmStatic

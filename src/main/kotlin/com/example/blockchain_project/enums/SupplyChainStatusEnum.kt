@@ -1,8 +1,9 @@
 package com.example.blockchain_project.enums
 
 import com.fasterxml.jackson.annotation.JsonCreator
+import com.fasterxml.jackson.annotation.JsonValue
 
-enum class SupplyChainStatusEnum(val status: String) {
+enum class SupplyChainStatusEnum(@JsonValue val status: String) {
     MANUFACTURED("Manufactured"),
     PACKED("Packed"),
     COLLECTED_BY_DISTRIBUTOR("Collected by Distributor"),
